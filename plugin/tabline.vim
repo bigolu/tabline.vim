@@ -1,4 +1,4 @@
-" File:        tabline.vim
+ File:        tabline.vim
 " Maintainer:  Matthew Kitt <http://mkitt.net/>
 " Description: Configure tabs within Terminal Vim.
 " Last Change: 2012-10-21
@@ -27,18 +27,18 @@ function! Tabline()
 
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .':'
     let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
 
     if bufmodified
       let s .= '[+] '
     endif
-  endfor
 
-  let s .= '%#TabLineFill#'
-  if (exists("g:tablineclosebutton"))
-    let s .= '%=%999XX'
-  endif
+    if i < (tabpagenr('$') - 1)
+        let s .= '%#TabLine#│ '
+    endif
+  endfor
+  let s .= '%#TabLineFill#%=%999XX'
+
   return s
 endfunction
 set tabline=%!Tabline()
