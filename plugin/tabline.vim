@@ -1,4 +1,4 @@
- File:        tabline.vim
+" File:        tabline.vim
 " Maintainer:  Matthew Kitt <http://mkitt.net/>
 " Description: Configure tabs within Terminal Vim.
 " Last Change: 2012-10-21
