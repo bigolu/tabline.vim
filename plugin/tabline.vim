@@ -29,7 +29,7 @@ function! Tabline()
 
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#Comment#')
-    let s .= (bufname != '' ? ' ' . fnamemodify(bufname, ':t') . ' ' : '[No Name] ')
+    let s .= ' * ' . (bufname != '' ? fnamemodify(bufname, ':t') : '[No Name]') . ' '
 
     if bufmodified
       let s .= '[+] '
@@ -40,5 +40,6 @@ function! Tabline()
 
   return s
 endfunction
+
 set tabline=%!Tabline()
 
