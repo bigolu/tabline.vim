@@ -15,7 +15,6 @@ if (exists("g:loaded_tabline_vim") && g:loaded_tabline_vim) || &cp
 endif
 let g:loaded_tabline_vim = 1
 
-  echo bufname(winbufnr(1))
 function! Tabline()
   " shift tabline over if NERDTree is active
   let s = bufname(winbufnr(1)) == 'NERD_tree_1' ? repeat(' ', winwidth(1)).'│' : ''
