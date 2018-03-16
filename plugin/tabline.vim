@@ -28,7 +28,7 @@ function! Tabline()
     let bufmodified = getbufvar(bufnr, "&mod")
 
     let s .= '%' . tab . 'T'
-    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#Comment#')
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' * ' . (bufname != '' ? fnamemodify(bufname, ':t') : '[No Name]') . ' '
 
     if bufmodified
