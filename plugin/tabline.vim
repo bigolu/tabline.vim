@@ -17,7 +17,7 @@ let g:loaded_tabline_vim = 1
 
 function! Tabline()
   " shift tabline over if NERDTree is active
-  let s = bufname(winbufnr(1)) == 'NERD_tree_1' ? repeat(' ', winwidth(1)).'│' : ''
+  let s = bufname(winbufnr(1)) == 'NERD_tree_1' ? repeat(' ', winwidth(1)) : ''
 
   for i in range(tabpagenr('$'))
     let tab = i + 1
@@ -36,7 +36,6 @@ function! Tabline()
     endif
 
   endfor
-  let s .= '%#TabLineFill#%=%999XX'
 
   return s
 endfunction
